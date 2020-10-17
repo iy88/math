@@ -1,2 +1,2 @@
-# math
-Mathematical algorithm
+# Math
+### Mathematical algorithm
