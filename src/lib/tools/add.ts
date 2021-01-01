@@ -61,14 +61,3 @@ function getTensOfTheAdditionResult(x: string | number, y: string | number):numb
 function getUnitsOfTheAdditionResult(x: string | number, y: string | number):number {
   return constants.add[`${x}${y}`].units;
 }
-let x = 999999999;
-let y = 999999999;
-console.assert(x+y === add(x,y),'something wrong with the code...');
-if (x + y === add(x, y)) {
-  console.time('native');
-  x + y;
-  console.timeEnd('native');
-  console.time('program');
-  add(x, y);
-  console.timeEnd('program')
-}
