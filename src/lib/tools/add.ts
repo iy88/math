@@ -1,7 +1,10 @@
 import Constants from "../tools/constants";
 const constants = new Constants();
-export default function add(x: number, y: number) {
+export default function add(x: number | string, y: number | string): string {
   // Convert number to string
+  if (x < 10 && y < 10) {
+    return basicNumberAdditionResult(x, y).toString();
+  }
   let sx = x.toString().split('');
   let sy = y.toString().split('');
   sx.length < sy.length ? [sx, sy] = [sy, sx] : [sy, sx] = [sy, sx];
@@ -43,7 +46,7 @@ export default function add(x: number, y: number) {
       }
     }
   }
-  return Number(result.join(''));
+  return result.join('');
 }
 
 function checkAddResMoreThanNine(x: string | number, y: string | number): boolean {
@@ -54,10 +57,10 @@ function basicNumberAdditionResult(x: string | number, y: string | number): numb
   return constants.add[`${x}${y}`].res;
 }
 
-function getTensOfTheAdditionResult(x: string | number, y: string | number):number {
+function getTensOfTheAdditionResult(x: string | number, y: string | number): number {
   return constants.add[`${x}${y}`].tens;
 }
 
-function getUnitsOfTheAdditionResult(x: string | number, y: string | number):number {
+function getUnitsOfTheAdditionResult(x: string | number, y: string | number): number {
   return constants.add[`${x}${y}`].units;
 }
