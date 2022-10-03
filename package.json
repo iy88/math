@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@types/node": "^15.6.1"
+    "@types/node": "^18.8.0"
   },
   "scripts": {
     "build":"tsc",
